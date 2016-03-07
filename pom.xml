@@ -30,6 +30,33 @@
 			<version>3.0</version>
 		</dependency>
 		<!-- ======================== guice end =============== -->
+		<!-- ======================== rxnetty =============== -->
+		<dependency>
+			<groupId>io.reactivex</groupId>
+			<artifactId>rxnetty</artifactId>
+			<version>0.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-buffer</artifactId>
+			<version>4.0.21.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-codec-http</artifactId>
+			<version>4.0.21.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<!-- ======================== rxnetty end =============== -->
+		<dependency>
+			<groupId>io.reactivex</groupId>
+			<artifactId>rxjava</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

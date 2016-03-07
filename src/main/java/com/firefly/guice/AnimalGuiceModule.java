@@ -13,6 +13,8 @@ public class AnimalGuiceModule implements Module {
     @Override
     public void configure(Binder binder) {
         binder.bind(AnimalGuice.class).to(TiggerGuiceImpl.class);
+        // 多实例实现用名annotatedWith
+        // binder.bind(AnimalGuice.class).annotatedWith(Names.named("xxxx")).to("impless")
     }
 
 }
