@@ -9,7 +9,6 @@ import com.espertech.esper.client.EPRuntime;
 import com.espertech.esper.client.EPServiceProvider;
 import com.espertech.esper.client.EPServiceProviderManager;
 import com.espertech.esper.client.EPStatement;
-import com.firefly.esper.Person;
 
 /**
  * 类PersonMap.java的实现描述：TODO 类实现描述
@@ -45,15 +44,22 @@ public class PersonMap {
          */
         admin.getConfiguration().addEventType("Person", person);
 
-        String epl = "select age,children from " + Person.class.getName() + " where name=\"Jordan\"";
+        String epl = "select age,children from  Person where name=\"Jordan\"";
+
         EPStatement state = admin.createEPL(epl);
         state.addListener(new PersonMapListener());
 
         EPRuntime runtime = epService.getEPRuntime();
-        Person per = new Person();
-        per.setName("Jordan");
-        per.setAge(10);
-        runtime.sendEvent(per);
+        Map<String, Object> per = new HashMap<>();
+        per.put("name", "Jordan");
+        per.put("age", 10);
+        runtime.sendEvent(per, "Person");
+
+        String t = "select road from Address where road=\"road\"";
+        admin.createEPL(t).addListener(new xxxTest());
+        Map<String, Object> e = new HashMap<>();
+        e.put("road", "road");
+        runtime.sendEvent(e, "Address");
 
     }
 
